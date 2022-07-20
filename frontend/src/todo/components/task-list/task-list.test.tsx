@@ -15,9 +15,13 @@ describe("TaskList Component", () => {
       ]
       render(<TaskList userData={data} />)
 
-      const propsText = screen.getByText("점심 식사 구하기")
+      const firstPropsText = screen.getByText("점심 식사 구하기")
+      const secondPropsText = screen.getByText("점심 식사 구하기")
+      const thirdPropsText = screen.getByText("점심 식사 구하기")
 
-      expect(propsText).toBeInTheDocument()
+      expect(firstPropsText).toBeInTheDocument()
+      expect(secondPropsText).toBeInTheDocument()
+      expect(thirdPropsText).toBeInTheDocument()
     })
   })
 })
