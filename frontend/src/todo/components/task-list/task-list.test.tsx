@@ -16,12 +16,10 @@ describe("TaskList Component", () => {
       render(<TaskList userData={data} />)
 
       const firstPropsText = screen.getByText("점심 식사 구하기")
-      const secondPropsText = screen.getByText("점심 식사 구하기")
-      const thirdPropsText = screen.getByText("점심 식사 구하기")
+      const deleteButtons = screen.getAllByRole("button")
 
       expect(firstPropsText).toBeInTheDocument()
-      expect(secondPropsText).toBeInTheDocument()
-      expect(thirdPropsText).toBeInTheDocument()
+      expect(deleteButtons).toHaveLength(3)
     })
   })
 })

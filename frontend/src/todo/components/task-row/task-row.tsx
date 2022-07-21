@@ -49,9 +49,9 @@ export const TaksRow = ({ id, title, completed, deleteText }: TaskRowProps) => {
         </span>
       )}
 
-      <span data-testid="xBtn" className={styles.Xbtn} onClick={deleteText}>
+      <button type="button" className={styles.Xbtn} onClick={deleteText}>
         &times;
-      </span>
+      </button>
     </div>
   )
 }
