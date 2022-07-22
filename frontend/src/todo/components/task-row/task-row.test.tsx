@@ -24,15 +24,6 @@ describe("<Todo />", () => {
     expect(deleteButton).toBeInTheDocument()
   })
 
-  it("calls handleTaskComplete when checkbox clicked", () => {
-    render(<Todo task={sample} handleTaskComplete={changeTest} handleTaskDelete={deleteTest} />)
-
-    const taskCheckbox = screen.getByRole("checkbox")
-    userEvent.click(taskCheckbox)
-
-    expect(changeTest).toBeCalledTimes(1)
-  })
-
   it("completes task when true value comes", () => {
     sample.isChecked = true
 

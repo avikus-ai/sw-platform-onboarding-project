@@ -1,5 +1,5 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { render, screen, within } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 
 import TodoList from "./task-list"
@@ -31,11 +31,10 @@ describe("<TodoList />", () => {
         handleTaskDelete={samples.handleTaskDelete}
       />
     )
-    const title1 = screen.getByLabelText(samples.tasks[0].title).id
-    const title2 = screen.getByLabelText(samples.tasks[1].title).id
 
-    expect(title1).toEqual("task 1")
-    expect(title2).toEqual("task 2")
+    const tasks = screen.getAllByRole("checkbox")
+
+    expect(tasks.length).toBe(2)
   })
 
   it("calls handle functions", () => {
